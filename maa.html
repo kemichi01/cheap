@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        let good = document.querySelector('.good');
+        let cheap = document.querySelector('.cheap');
+        let fast = document.querySelector('fast');
+        function changed(el) {
+            let isgood = good.checked;
+            let ischeap = cheap.checked;
+            let isfast = fast.checked;
+            if(isgood&&ischeap&&isfast&&el==cheap){
+                fast.checked = false;
+            }
+            if(isgood&&ischeap&&isfast&&el==fast){
+                good.checked = false;
+            }
+            if(isgood&&ischeap&&isfast&&el==good){
+                cheap.checked = false;
+            }
+        }
+    </script>
+</head>
+<body>
+<table>
+    <tr>
+        <td>
+            <input type="checkbox" onchange="changed(this)"> Good
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <input type="checkbox" onchange="changed(this)"> cheap
+        </td>
+
+    </tr>
+    <tr>
+        <td>
+            <input type="checkbox" onchange="changed(this)"> Fast
+        </td>
+
+    </tr>
+</table>
+</body>
+</html>
